@@ -212,7 +212,7 @@ function renderGrid(){
     const art = i.img ? `<img src="${i.img}" alt="" loading="lazy" decoding="async">` : `<span class="ph">${esc(i.t.slice(0,1).toUpperCase())}</span>`;
     return `<button class="card${on?" sel":""}${full&&!on?" dim":""}" data-id="${esc(i.id)}" aria-pressed="${on}" title="${esc(i.id)}" style="--c1:${c1};--c2:${c2}">
       <div class="art">${art}</div>${i.new?'<span class="new">NEW</span>':""}<span class="chk">&#10003;</span>
-      <div class="meta"><div class="t">${esc(i.t)}</div><div class="g">${esc(i.g)}</div><div class="n">${i.n}</div></div></button>`;
+      <div class="meta"><div class="t">${esc(i.t)}</div><div class="g">${esc(i.g)}</div><div class="n">${i.n>=2?"Popular":"&nbsp;"}</div></div></button>`;
   }).join("") : `<div class="empty">No character found. Try another name.</div>`;
 }
 function renderBar(){
